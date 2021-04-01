@@ -28,6 +28,9 @@ public class FindElementVsFindElements {
         for(WebElement page : pageTitles){
             System.out.println("Title : "+page.getText());
         }
+
+        //get size of the pageTitles
+        System.out.println("Size of PageTitles : "+pageTitles.size());
     }
 }
 
