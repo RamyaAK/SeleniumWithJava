@@ -40,10 +40,12 @@ public class GetTextVsGetAttribute {
         // get text attribute
         WebElement recentPosts = driver.findElement(By.cssSelector("#recent-posts-2>h2"));
         WebElement searchAttributeText = driver.findElement(By.cssSelector("#search-3 > form > label > input"));
+        WebElement recentPostText = driver.findElement(By.xpath("//*[@id=\"recent-posts-2\"]/h2"));
 
         System.out.println(recentPosts.getAttribute("class"));
         System.out.println("The value of the search box attribute is " +searchAttributeText.getAttribute("name") );
         System.out.println("The value of the search box getText is " +searchAttributeText.getText());
+        System.out.println("The recent Post text is "+ recentPostText.getText());
         driver.quit();
     }
 }
