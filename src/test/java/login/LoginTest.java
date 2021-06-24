@@ -9,11 +9,11 @@ import pages.SecureArea;
 public class LoginTest extends BaseTest {
 
     @Test
-    public void testSuccessfulLogin(){
-       LoginPage loginPage = homePage.clickFormAuthentication();
-       loginPage.setUsername("tomsmith");
-       loginPage.setPassword("SuperSecretPassword!");
-       SecureArea secureArea = loginPage.clickOnLogin();
-       Assert.assertTrue(secureArea.verifyLoginSuccessful().contains("You logged into a secure area!"));
+    public void testSuccessfulLogin() {
+        LoginPage loginPage = homePage.clickFormAuthentication();
+        loginPage.setUsername("tomsmith");
+        loginPage.setPassword("SuperSecretPassword!");
+        SecureArea secureArea = loginPage.clickOnLogin();
+        Assert.assertTrue(secureArea.verifyLoginSuccessful().contains("You logged into a secure area!"));
     }
 }
