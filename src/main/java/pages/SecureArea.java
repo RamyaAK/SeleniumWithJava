@@ -1,20 +1,18 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
 public class SecureArea {
     private WebDriver driver;
-    @FindBy(id = "flash")
-    private WebElement loggedInBanner;
+    private By loggedInBanner = By.id("flash");
 
     public SecureArea(WebDriver driver) {
         this.driver = driver;
     }
 
-    public String verifyLoginSuccessful() {
-        loggedInBanner.isDisplayed();
-        return loggedInBanner.getText();
+    public  String verifyLoginSuccessful(){
+        driver.findElement(loggedInBanner).isDisplayed();
+        return driver.findElement(loggedInBanner).getText();
     }
 }

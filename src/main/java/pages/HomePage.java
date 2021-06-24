@@ -1,21 +1,20 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
 public class HomePage {
 
     private WebDriver driver;
-    @FindBy(linkText = "Form Authentication")
-    private WebElement authenticationLink;
+    private By authenticationLink = By.linkText("Form Authentication");
+
 
     public HomePage(WebDriver driver){
           this.driver = driver;
     }
 
     public LoginPage clickFormAuthentication(){
-        authenticationLink.click();
+        driver.findElement(authenticationLink).click();
         return new LoginPage(driver);
     }
 
