@@ -24,6 +24,7 @@ public class LaunchingBrowser {
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
+
         driver.get("https://ramyakulkarni.wordpress.com");
 
     }
