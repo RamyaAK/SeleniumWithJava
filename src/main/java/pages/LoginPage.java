@@ -13,12 +13,14 @@ public class LoginPage {
         this.driver = driver;
     }
 
-    public void setUsername(String username){
+    public LoginPage setUsername(String username){
         driver.findElement(userName).sendKeys(username);
+        return this;
     }
 
-    public void setPassword(String password){
+    public LoginPage setPassword(String password){
         driver.findElement(passwordVal).sendKeys(password);
+        return this;
     }
 
     public SecureArea clickOnLogin(){
