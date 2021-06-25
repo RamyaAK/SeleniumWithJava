@@ -21,15 +21,22 @@ public class BaseTest {
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         ChromeDriver driver = new ChromeDriver();
-        this.driver= driver;
+        this.driver = driver;
+        initializePageObjects();
+        launchUrl(driver);
+    }
 
+    private void launchUrl(ChromeDriver driver) {
+        driver.get("https://the-internet.herokuapp.com/");
+    }
+
+    public void initializePageObjects() {
         homePage = new HomePage(driver);
         loginPage = new LoginPage(driver);
         secureArea = new SecureArea(driver);
-
-        driver.get("https://the-internet.herokuapp.com/");
     }
-    @AfterClass(alwaysRun=true)
+
+    @AfterClass(alwaysRun = true)
     public void tearDown() {
         driver.quit();
     }
