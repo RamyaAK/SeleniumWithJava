@@ -7,10 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import pages.DropDownPage;
-import pages.HomePage;
-import pages.LoginPage;
-import pages.SecureArea;
+import pages.*;
 
 import java.util.List;
 
@@ -21,6 +18,7 @@ public class BaseTest {
     protected LoginPage loginPage;
     protected SecureArea secureArea;
     protected DropDownPage dropDownPage;
+    protected ForgotPasswordPage forgotPasswordPage;
 
 
     @BeforeClass
@@ -41,6 +39,7 @@ public class BaseTest {
         loginPage = new LoginPage(driver);
         secureArea = new SecureArea(driver);
         dropDownPage = new DropDownPage(driver);
+        forgotPasswordPage = new ForgotPasswordPage(driver);
     }
 
     // generic  method implementation:
