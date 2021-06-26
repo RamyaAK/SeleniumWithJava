@@ -2,12 +2,17 @@ package Base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import pages.DropDownPage;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.SecureArea;
+
+import java.util.List;
 
 public class BaseTest {
     private WebDriver driver;
@@ -15,6 +20,7 @@ public class BaseTest {
     protected HomePage homePage;
     protected LoginPage loginPage;
     protected SecureArea secureArea;
+    protected DropDownPage dropDownPage;
 
 
     @BeforeClass
@@ -34,6 +40,19 @@ public class BaseTest {
         homePage = new HomePage(driver);
         loginPage = new LoginPage(driver);
         secureArea = new SecureArea(driver);
+        dropDownPage = new DropDownPage(driver);
+    }
+
+    // generic  method implementation:
+    public static void selectOptionFromDropdown(WebElement element, String option) {
+        Select dropdown = new Select(element);
+        List<WebElement> list = dropdown.getOptions();
+
+        for (WebElement ele : list) {
+            if (ele.getText().equalsIgnoreCase(option)) {
+                ele.click();
+            }
+        }
     }
 
     @AfterClass(alwaysRun = true)

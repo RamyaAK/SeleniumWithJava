@@ -9,6 +9,7 @@ public class HomePage {
 
     private WebDriver driver;
     private By authenticationLink = By.linkText("Form Authentication");
+    private By dropDownButton = By.linkText("Dropdown");
    // @FindBy(linkText = "Form Authentication") WebElement authenticationLink;
 
 
@@ -19,6 +20,11 @@ public class HomePage {
     public LoginPage clickOnLoginForm(){
         driver.findElement(authenticationLink).click();
         return new LoginPage(driver);
+    }
+
+    public DropDownPage clickOnDropDown(){
+         driver.findElement(dropDownButton).click();
+        return new DropDownPage(driver);
     }
 
 
