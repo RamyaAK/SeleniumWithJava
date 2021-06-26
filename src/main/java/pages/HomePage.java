@@ -11,6 +11,7 @@ public class HomePage {
     private By authenticationLink = By.linkText("Form Authentication");
     private By dropDownButton = By.linkText("Dropdown");
     private By forgotPageLink = By.xpath("//a[normalize-space()='Forgot Password']");
+    private By hoversLink= By.linkText("Hovers");
    // @FindBy(linkText = "Form Authentication") WebElement authenticationLink;
 
 
@@ -32,4 +33,8 @@ public class HomePage {
         driver.findElement(forgotPageLink);
         return new ForgotPasswordPage(driver);
     }
+
+    public HoversPage clickOnHovers(){
+        driver.findElement(hoversLink).click();
+        return new HoversPage(driver);}
 }

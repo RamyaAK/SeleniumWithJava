@@ -19,6 +19,7 @@ public class BaseTest {
     protected SecureArea secureArea;
     protected DropDownPage dropDownPage;
     protected ForgotPasswordPage forgotPasswordPage;
+    protected HoversPage hoversPage;
 
 
     @BeforeClass
@@ -40,6 +41,7 @@ public class BaseTest {
         secureArea = new SecureArea(driver);
         dropDownPage = new DropDownPage(driver);
         forgotPasswordPage = new ForgotPasswordPage(driver);
+        hoversPage = new HoversPage(driver);
     }
 
     // generic  method implementation:

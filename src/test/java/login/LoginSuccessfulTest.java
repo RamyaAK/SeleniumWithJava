@@ -32,16 +32,6 @@ public class LoginSuccessfulTest extends BaseTest {
 
     }
 
-    @Test
-    public void testInvalidCredentialsLogin() throws InterruptedException {
-        Thread.sleep(5000);
-        homePage.clickOnLoginForm();
-        loginPage.setUsername("xyz")
-                .setPassword("12e3")
-                .clickOnLogin();
-        Assert.assertTrue(loginPage.getAlertMessage().contains("Your username is invalid!"));
-    }
-
     @AfterTest
     public void closeTest(){
         System.out.println("Test complete!");
