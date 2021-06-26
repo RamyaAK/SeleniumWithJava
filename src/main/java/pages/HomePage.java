@@ -2,8 +2,6 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
 public class HomePage {
 
@@ -12,6 +10,7 @@ public class HomePage {
     private By dropDownButton = By.linkText("Dropdown");
     private By forgotPageLink = By.xpath("//a[normalize-space()='Forgot Password']");
     private By hoversLink= By.linkText("Hovers");
+    private By keyPressesLink = By.linkText("Key Presses");
    // @FindBy(linkText = "Form Authentication") WebElement authenticationLink;
 
 
@@ -36,5 +35,11 @@ public class HomePage {
 
     public HoversPage clickOnHovers(){
         driver.findElement(hoversLink).click();
-        return new HoversPage(driver);}
+        return new HoversPage(driver);
+    }
+
+    public KeyPressesPage clickOnKeyPresses(){
+        driver.findElement(keyPressesLink).click();
+        return new KeyPressesPage(driver);
+    }
 }
