@@ -1,10 +1,10 @@
 package forgotPassword;
 
 import Base.BaseTest;
+import constants.UserProperties;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import constants.*;
 
 public class ForgotPasswordFormTest extends BaseTest {
     UserProperties user = new UserProperties();

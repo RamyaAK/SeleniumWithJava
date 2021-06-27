@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 public class SelectFromDropDownTest extends BaseTest {
 
     @Test
-    public void testInvalidCredentialsLogin() throws InterruptedException {
+    public void testDropDownElement() throws InterruptedException {
         //option to be selected: "Option 1"
         String option = "Option 1";
 

@@ -1,7 +1,7 @@
 package login;
 
 import Base.BaseTest;
-import constants.*;
+import constants.UserProperties;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;

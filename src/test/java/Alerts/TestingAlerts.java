@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class TestingAlerts extends BaseTest {
     @Test(priority = 1)
-    public void testSuccessfulKeyPress() throws InterruptedException {
+    public void testJavaScriptAlerts() throws InterruptedException {
         homePage.clickOnJavaScriptAlert();
 
         javaScriptAlertPage.clickOnTriggerAlertButton()

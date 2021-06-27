@@ -8,7 +8,7 @@ import pages.FigureCaptionBlock;
 
 public class HoverOverImageTest extends BaseTest {
     @Test
-    public void testSuccessfulLogin() {
+    public void testSuccessfulHoverOverImage() {
         homePage.clickOnHovers();
         FigureCaptionBlock caption = hoversPage.hoverOverFigure(1);
         Assert.assertTrue(caption.isCaptionDisplayed(),"Caption is Displayed");
