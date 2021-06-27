@@ -21,6 +21,7 @@ public class BaseTest {
     protected ForgotPasswordPage forgotPasswordPage;
     protected HoversPage hoversPage;
     protected KeyPressesPage keyPressesPage;
+    protected JavaScriptAlertPage javaScriptAlertPage;
 
 
     @BeforeClass
@@ -44,6 +45,7 @@ public class BaseTest {
         forgotPasswordPage = new ForgotPasswordPage(driver);
         hoversPage = new HoversPage(driver);
         keyPressesPage = new KeyPressesPage(driver);
+        javaScriptAlertPage = new JavaScriptAlertPage(driver);
     }
 
     // generic  method implementation:

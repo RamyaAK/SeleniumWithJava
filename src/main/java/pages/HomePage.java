@@ -9,22 +9,23 @@ public class HomePage {
     private By authenticationLink = By.linkText("Form Authentication");
     private By dropDownButton = By.linkText("Dropdown");
     private By forgotPageLink = By.xpath("//a[normalize-space()='Forgot Password']");
-    private By hoversLink= By.linkText("Hovers");
+    private By hoversLink = By.linkText("Hovers");
     private By keyPressesLink = By.linkText("Key Presses");
-   // @FindBy(linkText = "Form Authentication") WebElement authenticationLink;
+    private By javaScriptAlertsLink = By.linkText("JavaScript Alerts");
+    // @FindBy(linkText = "Form Authentication") WebElement authenticationLink;
 
 
-    public HomePage(WebDriver driver){
-          this.driver = driver;
+    public HomePage(WebDriver driver) {
+        this.driver = driver;
     }
 
-    public LoginPage clickOnLoginForm(){
+    public LoginPage clickOnLoginForm() {
         driver.findElement(authenticationLink).click();
         return new LoginPage(driver);
     }
 
-    public DropDownPage clickOnDropDown(){
-         driver.findElement(dropDownButton).click();
+    public DropDownPage clickOnDropDown() {
+        driver.findElement(dropDownButton).click();
         return new DropDownPage(driver);
     }
 
@@ -33,13 +34,18 @@ public class HomePage {
         return new ForgotPasswordPage(driver);
     }
 
-    public HoversPage clickOnHovers(){
+    public HoversPage clickOnHovers() {
         driver.findElement(hoversLink).click();
         return new HoversPage(driver);
     }
 
-    public KeyPressesPage clickOnKeyPresses(){
+    public KeyPressesPage clickOnKeyPresses() {
         driver.findElement(keyPressesLink).click();
         return new KeyPressesPage(driver);
+    }
+
+    public JavaScriptAlertPage clickOnJavaScriptAlert() {
+        driver.findElement(javaScriptAlertsLink).click();
+        return new JavaScriptAlertPage(driver);
     }
 }
