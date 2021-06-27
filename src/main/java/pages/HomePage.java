@@ -13,6 +13,7 @@ public class HomePage {
     private By keyPressesLink = By.linkText("Key Presses");
     private By javaScriptAlertsLink = By.linkText("JavaScript Alerts");
     private By fileUploadLink =By.linkText("File Upload");
+    private By contextMenuLink = By.linkText("Context Menu");
     // @FindBy(linkText = "Form Authentication") WebElement authenticationLink;
 
 
@@ -53,6 +54,10 @@ public class HomePage {
     public FileUploadPage clickOnFileUploadLink(){
         driver.findElement(fileUploadLink).click();
         return new FileUploadPage(driver);
+    }
 
+    public ContextClickPage clickOnContextMenuLink(){
+        driver.findElement(contextMenuLink).click();
+        return new ContextClickPage(driver);
     }
 }

@@ -23,6 +23,7 @@ public class BaseTest {
     protected KeyPressesPage keyPressesPage;
     protected JavaScriptAlertPage javaScriptAlertPage;
     protected FileUploadPage fileUploadPage;
+    protected ContextClickPage contextClickPage;
 
 
     @BeforeClass
@@ -48,6 +49,7 @@ public class BaseTest {
         keyPressesPage = new KeyPressesPage(driver);
         javaScriptAlertPage = new JavaScriptAlertPage(driver);
         fileUploadPage = new FileUploadPage(driver);
+        contextClickPage = new ContextClickPage(driver);
     }
 
     // generic  method implementation:
