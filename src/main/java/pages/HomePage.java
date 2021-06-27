@@ -15,6 +15,7 @@ public class HomePage {
     private By fileUploadLink =By.linkText("File Upload");
     private By contextMenuLink = By.linkText("Context Menu");
     private By wysiwygLink = By.linkText("WYSIWYG Editor");
+    private By dynamicLoadingLink = By.linkText("Dynamic Loading");
     // @FindBy(linkText = "Form Authentication") WebElement authenticationLink;
 
 
@@ -65,5 +66,10 @@ public class HomePage {
     public WYSISWYGPage clickOnWYSIWYGLink(){
         driver.findElement(wysiwygLink).click();
         return new WYSISWYGPage(driver);
+    }
+
+    public DynamicLoadingPage clickOnDynamicLoading(){
+        driver.findElement(dynamicLoadingLink).click();
+        return new DynamicLoadingPage(driver);
     }
 }

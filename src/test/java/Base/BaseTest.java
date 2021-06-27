@@ -25,6 +25,7 @@ public class BaseTest {
     protected FileUploadPage fileUploadPage;
     protected ContextClickPage contextClickPage;
     protected WYSISWYGPage wysiswygPage;
+    protected DynamicLoadingPage dynamicLoadingPage;
 
 
     @BeforeClass
@@ -32,6 +33,10 @@ public class BaseTest {
         WebDriverManager.chromedriver().setup();
         ChromeDriver driver = new ChromeDriver();
         this.driver = driver;
+
+        //below is an Example of Implicit wait:
+        //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
         initializePageObjects();
         launchUrl(driver);
     }
@@ -52,6 +57,7 @@ public class BaseTest {
         fileUploadPage = new FileUploadPage(driver);
         contextClickPage = new ContextClickPage(driver);
         wysiswygPage = new WYSISWYGPage(driver);
+        dynamicLoadingPage = new DynamicLoadingPage(driver);
     }
 
     // generic  method implementation:
