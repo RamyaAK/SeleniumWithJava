@@ -14,6 +14,7 @@ public class HomePage {
     private By javaScriptAlertsLink = By.linkText("JavaScript Alerts");
     private By fileUploadLink =By.linkText("File Upload");
     private By contextMenuLink = By.linkText("Context Menu");
+    private By wysiwygLink = By.linkText("WYSIWYG Editor");
     // @FindBy(linkText = "Form Authentication") WebElement authenticationLink;
 
 
@@ -59,5 +60,10 @@ public class HomePage {
     public ContextClickPage clickOnContextMenuLink(){
         driver.findElement(contextMenuLink).click();
         return new ContextClickPage(driver);
+    }
+
+    public WYSISWYGPage clickOnWYSIWYGLink(){
+        driver.findElement(wysiwygLink).click();
+        return new WYSISWYGPage(driver);
     }
 }

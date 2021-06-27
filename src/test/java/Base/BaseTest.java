@@ -24,6 +24,7 @@ public class BaseTest {
     protected JavaScriptAlertPage javaScriptAlertPage;
     protected FileUploadPage fileUploadPage;
     protected ContextClickPage contextClickPage;
+    protected WYSISWYGPage wysiswygPage;
 
 
     @BeforeClass
@@ -50,6 +51,7 @@ public class BaseTest {
         javaScriptAlertPage = new JavaScriptAlertPage(driver);
         fileUploadPage = new FileUploadPage(driver);
         contextClickPage = new ContextClickPage(driver);
+        wysiswygPage = new WYSISWYGPage(driver);
     }
 
     // generic  method implementation:
