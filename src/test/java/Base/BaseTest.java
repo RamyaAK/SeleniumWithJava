@@ -22,6 +22,7 @@ public class BaseTest {
     protected HoversPage hoversPage;
     protected KeyPressesPage keyPressesPage;
     protected JavaScriptAlertPage javaScriptAlertPage;
+    protected FileUploadPage fileUploadPage;
 
 
     @BeforeClass
@@ -46,6 +47,7 @@ public class BaseTest {
         hoversPage = new HoversPage(driver);
         keyPressesPage = new KeyPressesPage(driver);
         javaScriptAlertPage = new JavaScriptAlertPage(driver);
+        fileUploadPage = new FileUploadPage(driver);
     }
 
     // generic  method implementation:

@@ -12,6 +12,7 @@ public class HomePage {
     private By hoversLink = By.linkText("Hovers");
     private By keyPressesLink = By.linkText("Key Presses");
     private By javaScriptAlertsLink = By.linkText("JavaScript Alerts");
+    private By fileUploadLink =By.linkText("File Upload");
     // @FindBy(linkText = "Form Authentication") WebElement authenticationLink;
 
 
@@ -47,5 +48,11 @@ public class HomePage {
     public JavaScriptAlertPage clickOnJavaScriptAlert() {
         driver.findElement(javaScriptAlertsLink).click();
         return new JavaScriptAlertPage(driver);
+    }
+
+    public FileUploadPage clickOnFileUploadLink(){
+        driver.findElement(fileUploadLink).click();
+        return new FileUploadPage(driver);
+
     }
 }
