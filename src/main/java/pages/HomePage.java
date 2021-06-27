@@ -16,6 +16,7 @@ public class HomePage {
     private By contextMenuLink = By.linkText("Context Menu");
     private By wysiwygLink = By.linkText("WYSIWYG Editor");
     private By dynamicLoadingLink = By.linkText("Dynamic Loading");
+    private By deepDomLink = By.linkText("Large & Deep DOM");
     // @FindBy(linkText = "Form Authentication") WebElement authenticationLink;
 
 
@@ -71,5 +72,10 @@ public class HomePage {
     public DynamicLoadingPage clickOnDynamicLoading(){
         driver.findElement(dynamicLoadingLink).click();
         return new DynamicLoadingPage(driver);
+    }
+
+    public DeepDomPage clickOnDeepDomLink(){
+        driver.findElement(deepDomLink).click();
+        return new DeepDomPage(driver);
     }
 }

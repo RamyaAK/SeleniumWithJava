@@ -26,6 +26,7 @@ public class BaseTest {
     protected ContextClickPage contextClickPage;
     protected WYSISWYGPage wysiswygPage;
     protected DynamicLoadingPage dynamicLoadingPage;
+    protected DeepDomPage deepDomPage;
 
 
     @BeforeClass
@@ -58,6 +59,7 @@ public class BaseTest {
         contextClickPage = new ContextClickPage(driver);
         wysiswygPage = new WYSISWYGPage(driver);
         dynamicLoadingPage = new DynamicLoadingPage(driver);
+        deepDomPage = new DeepDomPage(driver);
     }
 
     // generic  method implementation:

@@ -44,8 +44,9 @@ public class DynamicLoadingPage {
     public void fluentWait() {
         FluentWait wait = new FluentWait(driver)
                 .withTimeout(Duration.ofSeconds(5))
-                .pollingEvery(Duration.ofSeconds(5))
+                .pollingEvery(Duration.ofSeconds(1))
                 .ignoring(NoSuchElementException.class);
+        wait.until(ExpectedConditions.invisibilityOf(driver.findElement(loadingIndicator)));
     }
 
     public String getLoadedText() {
