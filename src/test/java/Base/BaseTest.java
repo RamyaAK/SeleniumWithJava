@@ -1,14 +1,21 @@
 package Base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import pages.*;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 public class BaseTest {
@@ -74,8 +81,31 @@ public class BaseTest {
         }
     }
 
-    @AfterClass(alwaysRun = true)
-    public void tearDown() {
-        driver.quit();
+    @AfterMethod
+    public void recordFailedTestcase(ITestResult result) {
+        if (ITestResult.FAILURE == result.getStatus()) {
+            try {
+                // Create reference of TakesScreenshot
+                TakesScreenshot ts = (TakesScreenshot) driver;
+
+                // Call method to capture screenshot
+                File screenshot = ts.getScreenshotAs(OutputType.FILE);
+
+                try {
+                    FileHandler.copy(screenshot,
+                            new File("/Users/ramyaakulkarni/Downloads/orders-functional-tests/selenium practice/src/main/resources/Screenshots" + result.getName() + ".png"));
+                    System.out.println("Screenshot taken");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } finally {
+                System.out.println("Please Refer the screenshot to investigate test failure!");
+            }
+            }
+        }
+
+        @AfterClass(alwaysRun = true)
+        public void tearDown () {
+            driver.quit();
+        }
     }
-}
