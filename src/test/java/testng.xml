@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel = "tests" thread-count="2">
+    <test verbose="2" preserve-order="true" name="/Users/ramyasachin/SeleniumJava_Project/SeleniumWithJava">
+        <parameter name="browserName" value="firefox"></parameter>
+        <classes>
+            <class name="AdvancedInteractions.ContextClickTest">
+                <methods>
+                    <include name="testSuccessfulContextClick"/>
+                </methods>
+            </class>
+            <class name="AdvancedInteractions.HoverOverImageTest">
+                <methods>
+                    <include name="testSuccessfulHoverOverImage"/>
+                </methods>
+            </class>
+            <class name="AdvancedInteractions.KeyPressesTest">
+                <methods>
+                    <include name="testSuccessfulKeyPress"/>
+                    <include name="enterPiTest"/>
+                </methods>
+            </class>
+            <class name="Alerts.TestingAlerts">
+                <methods>
+                    <include name="testJavaScriptAlerts"/>
+                </methods>
+            </class>
+            <class name="AutoSuggestions.handleAutoSuggestions">
+                <methods>
+                    <include name="testAutoSuggestions"/>
+                </methods>
+            </class>
+            <class name="FileUploads.FileUploadTest">
+                <methods>
+                    <include name="testFileUpload"/>
+                </methods>
+            </class>
+            <class name="FindElementAndFindElements.FindElementVsFindElements">
+                <methods>
+                    <include name="shouldTestFindElementVsFindElements"/>
+                </methods>
+            </class>
+            <class name="Frames.HandlingFramesTest">
+                <methods>
+                    <include name="testFrames"/>
+                </methods>
+            </class>
+            <class name="GetTitleOfUrPage.GetTitleFromWebPage">
+                <methods>
+                    <include name="shouldGetTitle"/>
+                    <include name="shouldGetCurrentURL"/>
+                    <include name="shouldGetPageSource"/>
+                </methods>
+            </class>
+            <class name="HandlingDropdowns.HandleDropDown">
+                <methods>
+                    <include name="HandleDropDown"/>
+                </methods>
+            </class>
+            <class name="JavaScriptControls.UsingJavaScriptTest">
+                <methods>
+                    <include name="testScrollTable"/>
+                </methods>
+            </class>
+            <class name="LaunchBrowser.LaunchingBrowser">
+                <methods>
+                    <include name="testLaunchingBrowser"/>
+                    <include name="testLaunchingBrowserWithWebDriverManager"/>
+                </methods>
+            </class>
+            <class name="Navigation.Navigation">
+                <methods>
+                    <include name="shouldTestNavigatingCommandsInSelenium"/>
+                </methods>
+            </class>
+            <class name="StatusOfWebElement.StatusOfWebElement">
+                <methods>
+                    <include name="testStatus"/>
+                </methods>
+            </class>
+            <class name="TextProperties.GetTextVsGetAttribute">
+                <methods>
+                    <include name="shouldTestGetTextVsGetAttribute"/>
+                </methods>
+            </class>
+            <class name="Wait_Strategies.ExplictWaitTest">
+                <methods>
+                    <include name="testExplicitWait"/>
+                </methods>
+            </class>
+            <class name="forgotPassword.ForgotPasswordFormTest">
+                <methods>
+                    <include name="testForgotPasswordForm"/>
+                </methods>
+            </class>
+            <class name="login.LoginInvalidCredentialsTest">
+                <methods>
+                    <include name="testInvalidCredentialsLogin"/>
+                </methods>
+            </class>
+            <class name="login.LoginSuccessfulTest">
+                <methods>
+                    <include name="testSuccessfulLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

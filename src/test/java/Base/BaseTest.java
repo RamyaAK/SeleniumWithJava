@@ -6,12 +6,15 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import pages.*;
 
 import java.io.File;
@@ -37,11 +40,24 @@ public class BaseTest {
 
 
     @BeforeClass
-    public void setUp() {
-        WebDriverManager.chromedriver().setup();
-        ChromeDriver driver = new ChromeDriver();
-        this.driver = driver;
-
+    @Parameters("browserName")
+    public void setUp(String browserName) {
+        System.out.println("Browser Name is = "+browserName);
+        if(browserName.equalsIgnoreCase("chrome")){
+            WebDriverManager.chromedriver().setup();
+            ChromeDriver driver = new ChromeDriver();
+            this.driver = driver;
+        }
+        else if(browserName.equalsIgnoreCase("firefox")){
+            WebDriverManager.firefoxdriver().setup();
+            FirefoxDriver driver = new FirefoxDriver();
+            this.driver=driver;
+        }
+        else if(browserName.equalsIgnoreCase("edgedriver")){
+            WebDriverManager.edgedriver().setup();
+            EdgeDriver driver = new EdgeDriver();
+            this.driver=driver;
+        }
         //below is an Example of Implicit wait:
         //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
@@ -49,7 +65,7 @@ public class BaseTest {
         launchUrl(driver);
     }
 
-    private void launchUrl(ChromeDriver driver) {
+    private void launchUrl(WebDriver driver) {
         driver.get("https://the-internet.herokuapp.com/");
     }
 
